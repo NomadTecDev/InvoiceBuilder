@@ -1,0 +1,175 @@
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# User-specific files (Windows)
+*.userprefs
+
+# Mono auto generated files
+mono_crash.*
+
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+*.swp
+*~
+.nfs*
+
+# Visual Studio
+.vscode/
+.vs/
+*.code-workspace
+
+# Visual Studio 2022
+.vscode/
+.vs/
+*.code-workspace
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# Node modules
+node_modules/
+
+# Project-specific files
+[Bb]in/
+[Oo]bj/
+[Rr]eleases/
+[Tt]emp/
+[Tt]empPE/
+[Tt]empGen/
+[Tt]empOut/
+
+# Build directories
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ssets/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*.sln.ide
+*.vcxproj.user
+*.vcxproj.filters
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Business Intelligence projects
+*.rdl.data
+*.bim.layout
+*.bim_*.settings
+*.bidb
+*.bim
+*.pbix
+
+# Microsoft Azure Web App publish settings
+#*.azurePubxml
+#PublishScripts/
+
+# MSTest test Results
+TestResults
+*.trx
+*.coverage
+*.coveragexml
+_Reports/
+_reports/
+
+# C++/CLI project .NET module target
+*.clr
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Others
+.venv/
+__pycache__/
+.vscode/
+.vs/
+.idea/
+*.log
+*.bak
+*.env
+!.vscode/extensions.json
+*.orig
+*.rej
+
+# Local history for JetBrains IDEs
+.idea/
+
+# Ignore NPM packages
+node_modules/
+
+# Ignore Yarn integrity file
+.yarn-integrity
+
+# Ignore lock files
+package-lock.json
+yarn.lock
+
+# Ignore coverage files
+coverage/
+
+# Ignore dotenv environment variables file
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Ignore build output
+dist/
+out/
+
+# Ignore IDE settings
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore crash reports
+*.dmp
+
+# Ignore temporary files
+*.tmp
+*.swp
+*~
+
+# Ignore EditorConfig files
+.editorconfig

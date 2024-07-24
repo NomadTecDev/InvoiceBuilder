@@ -1,6 +1,0 @@
-C:\Storage\StackLennartp\NomadTec.dev\Repo\InvoiceBuilder\src\InvoiceBuilder.Application\obj\Debug\net8.0\InvoiceBuilder.Application.csproj.AssemblyReference.cache
-C:\Storage\StackLennartp\NomadTec.dev\Repo\InvoiceBuilder\src\InvoiceBuilder.Application\obj\Debug\net8.0\InvoiceBuilder.Application.GeneratedMSBuildEditorConfig.editorconfig
-C:\Storage\StackLennartp\NomadTec.dev\Repo\InvoiceBuilder\src\InvoiceBuilder.Application\obj\Debug\net8.0\InvoiceBuilder.Application.AssemblyInfoInputs.cache
-C:\Storage\StackLennartp\NomadTec.dev\Repo\InvoiceBuilder\src\InvoiceBuilder.Application\obj\Debug\net8.0\InvoiceBuilder.Application.AssemblyInfo.cs
-C:\Storage\StackLennartp\NomadTec.dev\Repo\InvoiceBuilder\src\InvoiceBuilder.Application\obj\Debug\net8.0\InvoiceBuilder.Application.csproj.CoreCompileInputs.cache
-C:\Storage\StackLennartp\NomadTec.dev\Repo\InvoiceBuilder\src\InvoiceBuilder.Application\obj\Debug\net8.0\InvoiceBuilder.Application.sourcelink.json
