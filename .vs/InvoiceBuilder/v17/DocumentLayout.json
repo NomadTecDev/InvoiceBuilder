@@ -1,0 +1,326 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{60F346A4-C2DE-4E00-AEDE-5524C98FF659}|src\\InvoiceBuilder\\InvoiceBuilder.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60F346A4-C2DE-4E00-AEDE-5524C98FF659}|src\\InvoiceBuilder\\InvoiceBuilder.csproj|solutionrelative:src\\invoicebuilder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\invoicebuilder.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\invoicebuilder.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\dtos\\csvinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\dtos\\csvinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\dtos\\excelinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\dtos\\excelinvoicedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\datasources\\csvdatasource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\datasources\\csvdatasource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F346A4-C2DE-4E00-AEDE-5524C98FF659}|src\\InvoiceBuilder\\InvoiceBuilder.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder\\invoicebuilder.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{60F346A4-C2DE-4E00-AEDE-5524C98FF659}|src\\InvoiceBuilder\\InvoiceBuilder.csproj|solutionrelative:src\\invoicebuilder\\invoicebuilder.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\interfaces\\igetlatestinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\interfaces\\igetlatestinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\interfaces\\iinvoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\interfaces\\iinvoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\usecases\\generateinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\usecases\\generateinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\services\\invoiceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\interfaces\\iinvoicedatasource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\interfaces\\iinvoicedatasource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\interfaces\\igenerateinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\interfaces\\igenerateinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\usecases\\getlatestinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\usecases\\getlatestinvoiceusecase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\entities\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\entities\\company.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\datasources\\exceldatasource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\datasources\\exceldatasource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\entities\\invoicerow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\entities\\invoicerow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder.application\\entities\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}|src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj|solutionrelative:src\\invoicebuilder.application\\entities\\invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{60F346A4-C2DE-4E00-AEDE-5524C98FF659}|src\\InvoiceBuilder\\InvoiceBuilder.csproj|c:\\storage\\stacklennartp\\nomadtec.dev\\repo\\invoicebuilder\\src\\invoicebuilder\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{60F346A4-C2DE-4E00-AEDE-5524C98FF659}|src\\InvoiceBuilder\\InvoiceBuilder.csproj|solutionrelative:src\\invoicebuilder\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder\\Program.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder\\Program.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder\\Program.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T14:32:16.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InvoiceBuilder",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder\\InvoiceBuilder.csproj",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder\\InvoiceBuilder.csproj",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder\\InvoiceBuilder.csproj",
+              "RelativeToolTip": "src\\InvoiceBuilder\\InvoiceBuilder.csproj",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-24T15:00:09.465Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InvoiceBuilder.Application",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\InvoiceBuilder.Application.csproj",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAgwBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-24T16:05:18.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CsvDataSource.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DataSources\\CsvDataSource.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\DataSources\\CsvDataSource.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DataSources\\CsvDataSource.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\DataSources\\CsvDataSource.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAQwAsAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T15:42:22.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CsvInvoiceDto.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DTOs\\CsvInvoiceDto.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\DTOs\\CsvInvoiceDto.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DTOs\\CsvInvoiceDto.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\DTOs\\CsvInvoiceDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T15:26:14.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExcelInvoiceDto.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DTOs\\ExcelInvoiceDto.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\DTOs\\ExcelInvoiceDto.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DTOs\\ExcelInvoiceDto.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\DTOs\\ExcelInvoiceDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T15:28:09.61Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IInvoiceService.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceService.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceService.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceService.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:23:52.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GenerateInvoiceUseCase.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\UseCases\\GenerateInvoiceUseCase.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\UseCases\\GenerateInvoiceUseCase.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\UseCases\\GenerateInvoiceUseCase.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\UseCases\\GenerateInvoiceUseCase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:11:08.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "InvoiceService.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Services\\InvoiceService.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Services\\InvoiceService.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Services\\InvoiceService.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Services\\InvoiceService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:14:29.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IGenerateInvoiceUseCase.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IGenerateInvoiceUseCase.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Interfaces\\IGenerateInvoiceUseCase.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IGenerateInvoiceUseCase.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Interfaces\\IGenerateInvoiceUseCase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:03:43.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IGetLatestInvoiceUseCase.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IGetLatestInvoiceUseCase.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Interfaces\\IGetLatestInvoiceUseCase.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IGetLatestInvoiceUseCase.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Interfaces\\IGetLatestInvoiceUseCase.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:03:18.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GetLatestInvoiceUseCase.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\UseCases\\GetLatestInvoiceUseCase.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\UseCases\\GetLatestInvoiceUseCase.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\UseCases\\GetLatestInvoiceUseCase.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\UseCases\\GetLatestInvoiceUseCase.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:09:40.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IInvoiceDataSource.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceDataSource.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceDataSource.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceDataSource.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Interfaces\\IInvoiceDataSource.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T16:02:41.528Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ExcelDataSource.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DataSources\\ExcelDataSource.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\DataSources\\ExcelDataSource.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\DataSources\\ExcelDataSource.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\DataSources\\ExcelDataSource.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T15:47:41.401Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Company.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Entities\\Company.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Entities\\Company.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Entities\\Company.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Entities\\Company.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABAAAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T15:40:23.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "InvoiceRow.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Entities\\InvoiceRow.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Entities\\InvoiceRow.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Entities\\InvoiceRow.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Entities\\InvoiceRow.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T15:36:00.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Entities\\Invoice.cs",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder.Application\\Entities\\Invoice.cs",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder.Application\\Entities\\Invoice.cs",
+              "RelativeToolTip": "src\\InvoiceBuilder.Application\\Entities\\Invoice.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAsAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T15:35:36.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\InvoiceBuilder\\appsettings.json",
+              "ToolTip": "C:\\Storage\\StackLennartp\\NomadTec.dev\\Repo\\InvoiceBuilder\\src\\InvoiceBuilder\\appsettings.json",
+              "RelativeToolTip": "src\\InvoiceBuilder\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-24T14:40:04.713Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
