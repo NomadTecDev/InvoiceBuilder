@@ -1,25 +1,17 @@
 ﻿using InvoiceBuilder.Application.Entities;
-using InvoiceBuilder.Application.Interfaces;
-using InvoiceBuilder.Application.UseCases;
+using InvoiceBuilder.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 
 namespace InvoiceBuilder.Application.Services
 {
-    public class InvoiceService : IInvoiceService
+    public class InvoiceBuilder(
+        IGetLatestInvoiceUseCase getLatestInvoiceUseCase,
+        IGenerateInvoiceUseCase generateInvoiceUseCase,
+        ILogger<InvoiceBuilder> logger) : IInvoiceBuilder
     {
-        private readonly IGetLatestInvoiceUseCase _getLatestInvoiceUseCase;
-        private readonly IGenerateInvoiceUseCase _generateInvoiceUseCase;
-        private readonly ILogger<InvoiceService> _logger;
-
-        public InvoiceService(
-            IGetLatestInvoiceUseCase getLatestInvoiceUseCase,
-            IGenerateInvoiceUseCase generateInvoiceUseCase,
-            ILogger<InvoiceService> logger)
-        {
-            _getLatestInvoiceUseCase = getLatestInvoiceUseCase;
-            _generateInvoiceUseCase = generateInvoiceUseCase;
-            _logger = logger;
-        }
+        private readonly IGetLatestInvoiceUseCase _getLatestInvoiceUseCase = getLatestInvoiceUseCase;
+        private readonly IGenerateInvoiceUseCase _generateInvoiceUseCase = generateInvoiceUseCase;
+        private readonly ILogger<InvoiceBuilder> _logger = logger;
 
         public Invoice GetLatestInvoice(string filePath)
         {

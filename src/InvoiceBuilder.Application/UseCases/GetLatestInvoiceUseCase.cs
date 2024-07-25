@@ -1,39 +1,32 @@
 ﻿using InvoiceBuilder.Application.Entities;
-using InvoiceBuilder.Application.Interfaces;
+using InvoiceBuilder.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace InvoiceBuilder.Application.UseCases
+namespace InvoiceBuilder.Application.UseCases;
+
+public class GetLatestInvoiceUseCase(IInvoiceRepository invoiceRepository, ILogger<GetLatestInvoiceUseCase> logger) : IGetLatestInvoiceUseCase
 {
-    public class GetLatestInvoiceUseCase : IGetLatestInvoiceUseCase
+    private readonly IInvoiceRepository _invoiceRepository = invoiceRepository;
+    private readonly ILogger<GetLatestInvoiceUseCase> _logger = logger;
+
+    public Invoice Execute(string filePath)
     {
-        private readonly IInvoiceDataSource _invoiceDataSource;
-        private readonly ILogger<GetLatestInvoiceUseCase> _logger;
-
-        public GetLatestInvoiceUseCase(IInvoiceDataSource invoiceDataSource, ILogger<GetLatestInvoiceUseCase> logger)
+        try
         {
-            _invoiceDataSource = invoiceDataSource;
-            _logger = logger;
+            var invoice = _invoiceRepository.GetLatestInvoice(filePath);
+            if (invoice == null)
+            {
+                _logger.LogWarning("No invoice found in the specified file.");
+                return null;
+            }
+
+            _logger.LogInformation("Successfully retrieved the latest invoice.");
+            return invoice;
         }
-
-        public Invoice Execute(string filePath)
+        catch (Exception ex)
         {
-            try
-            {
-                var invoice = _invoiceDataSource.GetLatestInvoice(filePath);
-                if (invoice == null)
-                {
-                    _logger.LogWarning("No invoice found in the specified file.");
-                    return null;
-                }
-
-                _logger.LogInformation("Successfully retrieved the latest invoice.");
-                return invoice;
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "An error occurred while retrieving the latest invoice.");
-                throw;
-            }
+            _logger.LogError(ex, "An error occurred while retrieving the latest invoice.");
+            throw;
         }
     }
 }

@@ -1,18 +1,13 @@
 ﻿using InvoiceBuilder.Application.Entities;
-using InvoiceBuilder.Application.Interfaces;
+using InvoiceBuilder.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 using Microsoft.Office.Interop.Word;
 
 namespace InvoiceBuilder.Application.UseCases
 {
-    public class GenerateInvoiceUseCase : IGenerateInvoiceUseCase
+    public class GenerateInvoiceUseCase(ILogger<GenerateInvoiceUseCase> logger) : IGenerateInvoiceUseCase
     {
-        private readonly ILogger<GenerateInvoiceUseCase> _logger;
-
-        public GenerateInvoiceUseCase(ILogger<GenerateInvoiceUseCase> logger)
-        {
-            _logger = logger;
-        }
+        private readonly ILogger<GenerateInvoiceUseCase> _logger = logger;
 
         public void Execute(Invoice invoice, string wordTemplatePath, string outputPdfPath)
         {

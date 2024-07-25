@@ -21,4 +21,8 @@
 
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj" />
+	</ItemGroup>
+
 </Project>
