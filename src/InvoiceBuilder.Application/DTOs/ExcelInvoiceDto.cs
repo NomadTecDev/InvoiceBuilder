@@ -1,34 +1,34 @@
 ﻿namespace InvoiceBuilder.Application.DTOs;
 
-public record ExcelInvoiceDto(
-    string InvoiceNumber,
-    DateOnly InvoiceDate,
-    DateOnly ExpireDate,
-    string CompanyName,
-    string ContactName,
-    string Address,
-    string Postal,
-    string City,
-    string Country,
-    string ChamberOfCommerce,
-    string VATID,
-    string Row1Description,
-    decimal Row1VatRate,
-    decimal Row1Cost,
-    string Row2Description,
-    decimal Row2VatRate,
-    decimal Row2Cost,
-    string Row3Description,
-    decimal Row3VatRate,
-    decimal Row3Cost,
-    string Row4Description,
-    decimal Row4VatRate,
-    decimal Row4Cost,
-    string Row5Description,
-    decimal Row5VatRate,
-    decimal Row5Cost,
-    string Row6Description,
-    decimal Row6VatRate,
-    decimal Row6Cost,
-    string Currency = "EUR"
-);
+public class ExcelInvoiceDto
+{
+    public string? InvoiceNumber { get; init; }
+    public DateOnly? InvoiceDate { get; init; }
+    public DateOnly? ExpireDate { get; init; }
+    public string? CompanyName { get; init; }
+    public string? ContactName { get; init; }
+    public string? Address { get; init; }
+    public string? Postal { get; init; }
+    public string? City { get; init; }
+    public string? Country { get; init; }
+    public string? ChamberOfCommerce { get; init; }
+    public string? VATID { get; init; }
+    public string? Row1Description { get; init; }
+    public decimal? Row1VatRate { get; init; }
+    public decimal? Row1Cost { get; init; }
+    public string? Row2Description { get; init; }
+    public decimal? Row2VatRate { get; init; }
+    public decimal? Row2Cost { get; init; }
+    public string? Row3Description { get; init; }
+    public decimal? Row3VatRate { get; init; }
+    public decimal? Row3Cost { get; init; }
+    public string? Row4Description { get; init; }
+    public decimal? Row4VatRate { get; init; }
+    public decimal? Row4Cost { get; init; }
+    public string? Row5Description { get; init; }
+    public decimal? Row5VatRate { get; init; }
+    public decimal? Row5Cost { get; init; }
+    public string? Row6Description { get; init; }
+    public decimal? Row6VatRate { get; init; }
+    public decimal? Row6Cost { get; init; }
+}

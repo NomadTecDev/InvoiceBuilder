@@ -7,4 +7,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\InvoiceBuilder.Application\InvoiceBuilder.Application.csproj" />
+    <ProjectReference Include="..\InvoiceBuilder.Configuration\InvoiceBuilder.Configuration.csproj" />
+    <ProjectReference Include="..\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj" />
+    <ProjectReference Include="..\InvoiceBuilder.Infrastructure\InvoiceBuilder.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

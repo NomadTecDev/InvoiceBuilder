@@ -1,7 +1,7 @@
 ﻿namespace InvoiceBuilder.Core.Entities;
 
-public record InvoiceRow(
-        string Description,
-        decimal? VatRate,
-        decimal? Cost
-);
+public class InvoiceRow {
+    public string Description { get; init; } = null!;
+    public decimal? VatRate { get; set; }
+    public decimal? Cost { get; init; }
+}

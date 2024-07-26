@@ -25,4 +25,8 @@
 	  <ProjectReference Include="..\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="UseCases\" />
+	</ItemGroup>
+
 </Project>

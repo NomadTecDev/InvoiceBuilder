@@ -4,5 +4,5 @@ namespace InvoiceBuilder.Core.Interfaces;
 
 public interface IInvoiceRepository
 {
-    Invoice GetLatestInvoice(string filePath);
+    RawInvoiceRow GetRawData(string sourceFile);
 }

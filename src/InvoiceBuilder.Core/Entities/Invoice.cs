@@ -1,10 +1,14 @@
 ﻿namespace InvoiceBuilder.Core.Entities;
 
-public record Invoice(
-    string Number,
-    DateOnly Date,
-    Company Company,
-    DateOnly ExpireDate,
-    List<InvoiceRow> InvoiceRows,
-    string Currency = "EUR"
-);
+public class Invoice
+{
+    public string? InvoiceNumber { get; init; }
+    public DateOnly? Date { get; init; }
+    public Company? Company { get; init; }
+    public DateOnly? ExpireDate { get; init; }
+    public List<InvoiceRow>? InvoiceRows { get; init; }
+    public string? Currency { get; set; }
+    public decimal? Subtal { get; set; }
+    public decimal? VatTotal { get; set; }
+    public decimal? Total { get; set; }
+}

@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\InvoiceBuilder.Application\InvoiceBuilder.Application.csproj" />
+    <ProjectReference Include="..\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj" />
+  </ItemGroup>
+
 </Project>

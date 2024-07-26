@@ -1,14 +1,13 @@
-﻿using InvoiceBuilder.Application.Entities;
-using InvoiceBuilder.Application.Interfaces;
+﻿using CsvHelper;
 using InvoiceBuilder.Application.Services;
-using InvoiceBuilder.Application.UseCases;
-using InvoiceBuilder.Application.DataSources;
+using InvoiceBuilder.Core.Entities;
+using InvoiceBuilder.Core.Interfaces;
+using InvoiceBuilder.Infrastructure.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System;
-using System.IO;
+using System.Text.Json;
 
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureAppConfiguration((context, config) =>
@@ -20,47 +19,34 @@ var host = Host.CreateDefaultBuilder(args)
     })
     .ConfigureServices((context, services) =>
     {
-        services.Configure<InvoiceSettings>(context.Configuration.GetSection("InvoiceSettings"));
-
         services.AddLogging(config =>
         {
             config.AddConsole();
             config.AddDebug();
         });
 
-        services.AddTransient<IInvoiceDataSource, CsvInvoiceDataSource>(); // Or use ExcelInvoiceDataSource
-        services.AddTransient<IGetLatestInvoiceUseCase, GetLatestInvoiceUseCase>();
-        services.AddTransient<IGenerateInvoiceUseCase, GenerateInvoiceUseCase>();
-        services.AddTransient<IInvoiceService, InvoiceService>();
+        var serviceProvider = services.BuildServiceProvider();
+        var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
+
+        var invoiceSettings = context.Configuration.GetSection("InvoiceSettings").Get<InvoiceSettings>();
+
+
+        if (invoiceSettings is null)
+        {
+            logger.LogError("InvoiceSettings configuration section is missing or invalid.");
+            throw new ArgumentNullException(nameof(invoiceSettings), "InvoiceSettings configuration section is missing or invalid.");
+        }
+
+        var mappingSection = context.Configuration.GetSection("InvoiceSettings:Mapping").Get<Dictionary<string, object>>();
+        invoiceSettings.MappingRawString = JsonSerializer.Serialize(mappingSection, new JsonSerializerOptions { WriteIndented = true });
+
+        services.AddSingleton(invoiceSettings);
+        services.AddSingleton<IInvoiceService, InvoiceService>();
+        services.AddSingleton<IInvoiceRepository, CsvInvoiceRepository>();
     })
     .Build();
 
-var logger = host.Services.GetRequiredService<ILogger<Program>>();
-logger.LogInformation("Starting application");
-
 var invoiceService = host.Services.GetRequiredService<IInvoiceService>();
+var invoice = invoiceService.GetLatestInvoice();
 
-// Load configuration settings
-var config = host.Services.GetRequiredService<IConfiguration>();
-var filePath = config["InvoiceSettings:FilePath"];
-var wordTemplatePath = config["InvoiceSettings:WordTemplatePath"];
-var outputPdfPath = config["InvoiceSettings:OutputPdfPath"];
-
-try
-{
-    var invoice = invoiceService.GetLatestInvoice(filePath);
-    if (invoice != null)
-    {
-        invoiceService.GenerateInvoiceDocument(invoice, wordTemplatePath, outputPdfPath);
-    }
-    else
-    {
-        logger.LogWarning("No invoice data found to generate the document.");
-    }
-}
-catch (Exception ex)
-{
-    logger.LogError(ex, "An error occurred while processing the invoice.");
-}
-
-logger.LogInformation("Application finished");
+Console.WriteLine($"Factuurnummer {invoice.InvoiceNumber}");
