@@ -22,7 +22,7 @@ public class InvoiceService(
         {
             var rawInvoiceRow = invoiceRepository.GetRawData(invoiceSettings.SourceFile);
             var invoice = InvoiceMapper(rawInvoiceRow);
-            InvoiceCalculator(invoice);
+            GenerateInvoice(invoice);
             return invoice;
         }
         catch (Exception ex)
@@ -36,11 +36,58 @@ public class InvoiceService(
     {
         try
         {
-            var rawJsonString = invoiceSettings.MappingRawString;
+            var rawJsonString = @"
+                {
+                'InvoiceNumber': '${InvoiceNumber}',
+                'InvoiceDate': '${InvoiceDate}',
+                'InvoiceRows': [
+                    {
+                        'Description': '${IR1}',
+                        'Cost': ${IRP1}
+
+                    },
+                    {
+                        'Description': '${IR2}',
+                        'Cost': ${IRP2}
+                    },
+                    {
+                        'Description': '${IR3}',
+                        'Cost': ${IRP3}
+                    },
+                    {
+                        'Description': '${IR4}',
+                        'Cost': ${IRP4}
+                    },
+                    {
+                        'Description': '${IR5}',
+                        'Cost': ${IRP5}
+                    },
+                    {
+                        'Description': '${IR6}',
+                        'Cost': ${IRP6}
+                    }
+                ],
+                'Company': {
+                    'Name': '${Client}',
+                    'ContactName': '${Contact}',
+                    'Address': '${Address}',
+                    'Postal': '${Postal}',
+                    'City': '${City}',
+                    'Country': '${Country}',
+                    'ChamberOfCommerce': '${Kvk}',
+                    'VATID': '${Postal}'
+                    }
+                 }";
+
+            rawJsonString = rawJsonString.Replace("'", "\"");
 
             foreach (var key in rawInvoiceRow)
             {
-                rawJsonString = Regex.Replace(rawJsonString, $"\\${{{key.Key}}}", key.Value ?? "null");
+                // first replace strings
+                rawJsonString = Regex.Replace(rawJsonString, $"\"\\${{{key.Key}}}\"", string.IsNullOrWhiteSpace(key.Value) ? "null" : "\"" + key.Value + "\"");
+
+                // then replace numbers
+                rawJsonString = Regex.Replace(rawJsonString, $"\\${{{key.Key}}}", string.IsNullOrWhiteSpace(key.Value) ? "null" : key.Value);
             }
 
             var options = new JsonSerializerOptions
@@ -49,7 +96,7 @@ public class InvoiceService(
                 Converters =
                 {
                     new JsonStringEnumConverter(),
-                    new DateOnlyJsonConverter() // Custom converter for DateOnly
+                    new DateOnlyJsonConverter("dd/MM/yyyy")
                 }
             };
 
@@ -63,13 +110,16 @@ public class InvoiceService(
         }
     }
 
-    private void InvoiceCalculator(Invoice invoice)
+    private void GenerateInvoice(Invoice invoice)
     {
         if(invoice.InvoiceRows is null || invoice.InvoiceRows.Count == 0)
         {
             return;
         }
-        
+
+        invoice.Subtal = 0;
+        invoice.VatTotal = 0;
+
         foreach (var invoiceRow in invoice.InvoiceRows)
         {
             // skip empty rows
@@ -84,23 +134,30 @@ public class InvoiceService(
         }
 
         invoice.Total = invoice.Subtal + invoice.VatTotal;
-    }
 
-    public class DateOnlyJsonConverter : JsonConverter<DateOnly>
+        // set the expire date
+        invoice.ExpireDate ??= invoice.InvoiceDate.AddDays(invoiceSettings.DefaultExpireDays);
+
+        // set the default currency
+        invoice.Currency ??= invoiceSettings.DefaultCurrency;
+    }
+    public class DateOnlyJsonConverter(string dateFormat) : JsonConverter<DateOnly>
     {
+        private readonly string _dateFormat = dateFormat;
+
         public override DateOnly Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            if (reader.TokenType == JsonTokenType.String && reader.TryGetDateTime(out DateTime dateTime))
+            if (reader.TokenType == JsonTokenType.String && DateOnly.TryParseExact(reader.GetString(), _dateFormat, null, System.Globalization.DateTimeStyles.None, out DateOnly date))
             {
-                return DateOnly.FromDateTime(dateTime);
+                return date;
             }
 
-            throw new JsonException();
+            throw new JsonException($"Unable to parse date. Expected format: {_dateFormat}");
         }
 
         public override void Write(Utf8JsonWriter writer, DateOnly value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.ToString("MM/dd/yyyy"));
+            writer.WriteStringValue(value.ToString(_dateFormat));
         }
     }
 }
