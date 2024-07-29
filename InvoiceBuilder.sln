@@ -5,15 +5,15 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.Application", "src\InvoiceBuilder.Application\InvoiceBuilder.Application.csproj", "{5BA19C2D-AAEF-4F61-8924-F4C50C2F440A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceBuilder.Core", "src\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj", "{D689E12D-7812-4129-B38A-F2E17025567B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.Core", "src\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj", "{D689E12D-7812-4129-B38A-F2E17025567B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceBuilder.ConsoleApp", "src\InvoiceBuilder.ConsoleApp\InvoiceBuilder.ConsoleApp.csproj", "{8C322F97-20F9-4C2F-8FF4-01A2A4EA6A73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.ConsoleApp", "src\InvoiceBuilder.ConsoleApp\InvoiceBuilder.ConsoleApp.csproj", "{8C322F97-20F9-4C2F-8FF4-01A2A4EA6A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceBuilder.Configuration", "src\InvoiceBuilder.Configuration\InvoiceBuilder.Configuration.csproj", "{7F8D1CBA-6CBA-42BC-939D-BBD1C0A3737C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.Configuration", "src\InvoiceBuilder.Configuration\InvoiceBuilder.Configuration.csproj", "{7F8D1CBA-6CBA-42BC-939D-BBD1C0A3737C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceBuilder.ConsoleApp.IntegrationTests", "tests\InvoiceBuilder.ConsoleApp.IntegrationTests\InvoiceBuilder.ConsoleApp.IntegrationTests.csproj", "{EA3C431B-4736-4727-8151-DB00D38D91F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.ConsoleApp.IntegrationTests", "tests\InvoiceBuilder.ConsoleApp.IntegrationTests\InvoiceBuilder.ConsoleApp.IntegrationTests.csproj", "{EA3C431B-4736-4727-8151-DB00D38D91F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceBuilder.Infrastructure", "src\InvoiceBuilder.Infrastructure\InvoiceBuilder.Infrastructure.csproj", "{B9B66828-284A-4506-AB59-0A50E9814CE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.Infrastructure", "src\InvoiceBuilder.Infrastructure\InvoiceBuilder.Infrastructure.csproj", "{467F1B66-4A47-4F3D-9006-AC996F8F158A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +41,10 @@ Global
 		{EA3C431B-4736-4727-8151-DB00D38D91F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA3C431B-4736-4727-8151-DB00D38D91F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA3C431B-4736-4727-8151-DB00D38D91F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9B66828-284A-4506-AB59-0A50E9814CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9B66828-284A-4506-AB59-0A50E9814CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9B66828-284A-4506-AB59-0A50E9814CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9B66828-284A-4506-AB59-0A50E9814CE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{467F1B66-4A47-4F3D-9006-AC996F8F158A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{467F1B66-4A47-4F3D-9006-AC996F8F158A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{467F1B66-4A47-4F3D-9006-AC996F8F158A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{467F1B66-4A47-4F3D-9006-AC996F8F158A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

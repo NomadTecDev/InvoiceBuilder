@@ -2,7 +2,7 @@
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-public interface IInvoiceService
+public interface IInvoiceMapper
 {
-    Invoice GetLatestInvoice();
+    Invoice MapSource(RawInvoiceRow rawInvoiceRow);
 }

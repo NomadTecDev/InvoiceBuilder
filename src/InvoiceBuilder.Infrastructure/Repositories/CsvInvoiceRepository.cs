@@ -8,8 +8,6 @@ namespace InvoiceBuilder.Infrastructure.Repositories;
 
 public class CsvInvoiceRepository(ILogger<CsvInvoiceRepository> logger) : IInvoiceRepository
 {
-    private readonly ILogger<CsvInvoiceRepository> logger = logger;
-
     public RawInvoiceRow GetRawData(string sourceFile)
     {
         try

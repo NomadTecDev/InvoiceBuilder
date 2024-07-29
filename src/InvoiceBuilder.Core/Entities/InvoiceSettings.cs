@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+﻿using Microsoft.Extensions.Configuration;
 
 namespace InvoiceBuilder.Core.Entities;
 public class InvoiceSettings
@@ -8,5 +8,8 @@ public class InvoiceSettings
     public string OutputPdfPath { get; init; } = null!;
     public int DefaultExpireDays { get; init; } = 14;
     public decimal DefaultVateRate { get; init; } = 21;
-    public string DefaultCurrency { get; init; } = "";
+    public string DefaultCurrency { get; init; } = "EUR";
+    public string DefaultDateFormat { get; init; } = "dd/MM/yyyy";
+    public IConfigurationSection SourceMapping { get; init; } = null!;
+    public IConfigurationSection OutputMapping { get; init; } = null!;
 }

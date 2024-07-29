@@ -13,9 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\InvoiceBuilder.Application\InvoiceBuilder.Application.csproj" />
-    <ProjectReference Include="..\InvoiceBuilder.Configuration\InvoiceBuilder.Configuration.csproj" />
-    <ProjectReference Include="..\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj" />
-    <ProjectReference Include="..\InvoiceBuilder.Infrastructure\InvoiceBuilder.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
