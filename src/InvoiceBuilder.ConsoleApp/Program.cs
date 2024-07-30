@@ -26,4 +26,3 @@ var invoice = invoiceService.GetLatestInvoice();
 
 logger.LogInformation($"Factuurnummer {invoice.InvoiceNumber}");
 Console.WriteLine($"Factuurnummer {invoice.InvoiceNumber}");
-

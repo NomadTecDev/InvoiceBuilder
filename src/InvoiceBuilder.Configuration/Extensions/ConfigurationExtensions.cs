@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace InvoiceBuilder.Configuration.Extensions;
 
@@ -38,5 +40,26 @@ internal static class ConfigurationExtensions
         });
 
         return services;
+    }
+
+    private static object GetSectionData(IConfigurationSection section)
+    {
+        var children = section.GetChildren().ToList();
+        if (!children.Any())
+        {
+            return section.Value;
+        }
+
+        var result = new List<Dictionary<string, object>>();
+        foreach (var child in children)
+        {
+            var childData = new Dictionary<string, object>
+            {
+                { child.Key, GetSectionData(child) }
+            };
+            result.Add(childData);
+        }
+
+        return result;
     }
 }

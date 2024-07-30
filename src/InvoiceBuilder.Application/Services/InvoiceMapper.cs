@@ -1,7 +1,12 @@
-﻿using InvoiceBuilder.Application.Converters;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using InvoiceBuilder.Application.Converters;
+using InvoiceBuilder.Application.Extensions;
+using InvoiceBuilder.Configuration.Extensions;
 using InvoiceBuilder.Core.Entities;
 using InvoiceBuilder.Core.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
@@ -14,74 +19,29 @@ internal class InvoiceMapper(
 
     public Invoice MapSource(RawInvoiceRow rawInvoiceRow)
     {
+        var sourceMapJson = invoiceSettings.SourceMapping.GetJsonInvoice(rawInvoiceRow);
+
         try
         {
-            var rawJsonString = @"
-                    {
-                    'InvoiceNumber': '${InvoiceNumber}',
-                    'InvoiceDate': '${InvoiceDate}',
-                    'InvoiceRows': [
-                        {
-                            'Description': '${IR1}',
-                            'Cost': ${IRP1}
-
-                        },
-                        {
-                            'Description': '${IR2}',
-                            'Cost': ${IRP2}
-                        },
-                        {
-                            'Description': '${IR3}',
-                            'Cost': ${IRP3}
-                        },
-                        {
-                            'Description': '${IR4}',
-                            'Cost': ${IRP4}
-                        },
-                        {
-                            'Description': '${IR5}',
-                            'Cost': ${IRP5}
-                        },
-                        {
-                            'Description': '${IR6}',
-                            'Cost': ${IRP6}
-                        }
-                    ],
-                    'Company': {
-                        'Name': '${Client}',
-                        'ContactName': '${Contact}',
-                        'Address': '${Address}',
-                        'Postal': '${Postal}',
-                        'City': '${City}',
-                        'Country': '${Country}',
-                        'ChamberOfCommerce': '${Kvk}',
-                        'VATID': '${Postal}'
-                        }
-                     }";
-
-            rawJsonString = rawJsonString.Replace("'", "\"");
-
-            foreach (var key in rawInvoiceRow)
-            {
-                // first replace strings
-                rawJsonString = Regex.Replace(rawJsonString, $"\"\\${{{key.Key}}}\"", string.IsNullOrWhiteSpace(key.Value) ? "null" : "\"" + key.Value + "\"");
-
-                // then replace numbers
-                rawJsonString = Regex.Replace(rawJsonString, $"\\${{{key.Key}}}", string.IsNullOrWhiteSpace(key.Value) ? "null" : key.Value);
-            }
-
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+                ReadCommentHandling = JsonCommentHandling.Skip, 
+                AllowTrailingCommas = true, 
                 Converters =
                     {
-                        new JsonStringEnumConverter(),
+                        new JsonStringEnumConverter(JsonNamingPolicy.CamelCase),
+                        new StringToDecimalConverter(),
+                        new DecimalToStringConverter(),
                         new DateOnlyJsonConverter(invoiceSettings.DefaultDateFormat)
                 }
             };
 
-            return JsonSerializer.Deserialize<Invoice>(rawJsonString, options)
+            var invoice = JsonSerializer.Deserialize<Invoice>(sourceMapJson, options)
                 ?? throw new Exception("Deserialization resulted in null Invoice object");
+
+            return invoice;
         }
         catch (Exception ex)
         {

@@ -8,8 +8,7 @@ internal class InvoiceService(
     ILogger<InvoiceService> logger,
     IInvoiceRepository invoiceRepository,
     IInvoiceProcessor invoiceProcessor,
-    InvoiceSettings invoiceSettings) : IInvoiceService
-{
+    InvoiceSettings invoiceSettings) : IInvoiceService { 
 
     public Invoice GetLatestInvoice()
     {

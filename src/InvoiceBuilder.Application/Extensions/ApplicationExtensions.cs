@@ -27,6 +27,7 @@ public static class ApplicationExtensions
 
         services.AddSingleton(invoiceSettings);
 
+
         services.AddSingleton<IInvoiceService, InvoiceService>();
         services.AddSingleton<IFileFormatService, FileFormatService>();
         services.AddSingleton<IInvoiceRepositoryFactory, InvoiceRepositoryFactory>();
