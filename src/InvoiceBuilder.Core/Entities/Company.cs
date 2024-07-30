@@ -1,6 +1,6 @@
 ﻿namespace InvoiceBuilder.Core.Entities;
 
-public class Company
+internal class Company
 {
     public string? Name { get; init; }
     public string? ContactName { get; init; }

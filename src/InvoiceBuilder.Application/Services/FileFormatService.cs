@@ -4,7 +4,7 @@ using InvoiceBuilder.Core.Interfaces;
 
 namespace InvoiceBuilder.Application.Services;
 
-public class FileFormatService : IFileFormatService
+internal class FileFormatService : IFileFormatService
 {
     /// <summary>
     /// MimeTypesMap is a NuGet package is used to determine the file type based on it's file contents.

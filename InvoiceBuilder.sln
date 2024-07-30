@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.ConsoleApp.I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InvoiceBuilder.Infrastructure", "src\InvoiceBuilder.Infrastructure\InvoiceBuilder.Infrastructure.csproj", "{467F1B66-4A47-4F3D-9006-AC996F8F158A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvoiceBuilder.Shared", "src\InvoiceBuilder.Shared\InvoiceBuilder.Shared.csproj", "{3D7DE8D1-FA97-47F8-92D3-1898161BF20D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{467F1B66-4A47-4F3D-9006-AC996F8F158A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{467F1B66-4A47-4F3D-9006-AC996F8F158A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{467F1B66-4A47-4F3D-9006-AC996F8F158A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7DE8D1-FA97-47F8-92D3-1898161BF20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7DE8D1-FA97-47F8-92D3-1898161BF20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7DE8D1-FA97-47F8-92D3-1898161BF20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7DE8D1-FA97-47F8-92D3-1898161BF20D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

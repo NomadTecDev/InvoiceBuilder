@@ -2,7 +2,7 @@
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-public interface IInvoiceRepository
+internal interface IInvoiceRepository
 {
     RawInvoiceRow GetRawData(string sourceFile);
 }

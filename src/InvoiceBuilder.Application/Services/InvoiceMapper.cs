@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace InvoiceBuilder.Application.Services;
 
-public class InvoiceMapper(
+internal class InvoiceMapper(
     ILogger<InvoiceService> logger, 
     InvoiceSettings invoiceSettings) : IInvoiceMapper { 
 

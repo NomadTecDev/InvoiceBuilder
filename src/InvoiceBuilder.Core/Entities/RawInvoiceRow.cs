@@ -1,2 +1,2 @@
 ﻿namespace InvoiceBuilder.Core.Entities;
-public class RawInvoiceRow : Dictionary<string, string?>;
+internal class RawInvoiceRow : Dictionary<string, string?>;

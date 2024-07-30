@@ -1,6 +1,6 @@
 ﻿namespace InvoiceBuilder.Application.DTOs;
 
-public class ExcelInvoiceDto
+internal class ExcelInvoiceDto
 {
     public string? InvoiceNumber { get; init; }
     public DateOnly? InvoiceDate { get; init; }

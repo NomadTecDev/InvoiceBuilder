@@ -16,6 +16,10 @@
     <None Update="InvoiceTemplate.docx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <ProjectReference Include="..\InvoiceBuilder.Core\InvoiceBuilder.Core.csproj" />
+
+	<ProjectReference Include="..\InvoiceBuilder.Shared\InvoiceBuilder.Shared.csproj" />
+	  
   </ItemGroup>
 
 </Project>

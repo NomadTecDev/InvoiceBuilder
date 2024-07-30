@@ -7,7 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace InvoiceBuilder.Application.Services;
 
-public class InvoiceRepositoryFactory(
+internal class InvoiceRepositoryFactory(
     IServiceProvider serviceProvider, 
     IFileFormatService fileFormatService, 
     InvoiceSettings invoiceSettings) : IInvoiceRepositoryFactory

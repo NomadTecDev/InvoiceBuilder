@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 
 namespace InvoiceBuilder.Ifrastructure.Repositories;
 
-public class ExcelInvoiceRepository(ILogger<ExcelInvoiceRepository> logger) : IInvoiceRepository
+internal class ExcelInvoiceRepository(ILogger<ExcelInvoiceRepository> logger) : IInvoiceRepository
 {
     public RawInvoiceRow GetRawData(string sourceFile)
     {

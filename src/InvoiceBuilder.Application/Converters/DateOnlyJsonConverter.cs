@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace InvoiceBuilder.Application.Converters
 {
-    public class DateOnlyJsonConverter(string dateFormat) : JsonConverter<DateOnly>
+    internal class DateOnlyJsonConverter(string dateFormat) : JsonConverter<DateOnly>
     {
         private readonly string _dateFormat = dateFormat;
 

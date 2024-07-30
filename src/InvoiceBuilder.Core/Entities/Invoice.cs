@@ -1,6 +1,6 @@
 ﻿namespace InvoiceBuilder.Core.Entities;
 
-public class Invoice
+internal class Invoice
 {
     public string InvoiceNumber { get; init; } = null!;
     public DateOnly InvoiceDate { get; init; }

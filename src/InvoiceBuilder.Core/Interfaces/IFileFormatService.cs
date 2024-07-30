@@ -2,7 +2,7 @@
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-public interface IFileFormatService
+internal interface IFileFormatService
 {   
     public FileFormat GetFileFormat(string sourceFile);
 }

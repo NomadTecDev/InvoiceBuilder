@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 
 namespace InvoiceBuilder.Core.Entities;
-public class InvoiceSettings
+
+internal class InvoiceSettings
 {
     public string SourceFile { get; init; } = null!;
     public string TemplateFile { get; init; } = null!;

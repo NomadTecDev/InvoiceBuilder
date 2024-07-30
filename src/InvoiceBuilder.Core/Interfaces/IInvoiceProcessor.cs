@@ -2,7 +2,7 @@
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-public interface IInvoiceProcessor
+internal interface IInvoiceProcessor
 {
     Invoice Create(RawInvoiceRow rawInvoiceRow);
 }

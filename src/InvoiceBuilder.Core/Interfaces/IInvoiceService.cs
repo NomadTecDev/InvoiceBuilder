@@ -2,7 +2,7 @@
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-public interface IInvoiceService
+internal interface IInvoiceService
 {
     Invoice GetLatestInvoice();
 }

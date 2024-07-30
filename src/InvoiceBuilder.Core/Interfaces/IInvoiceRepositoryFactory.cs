@@ -2,7 +2,7 @@
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-public interface IInvoiceRepositoryFactory
+internal interface IInvoiceRepositoryFactory
 {
     IInvoiceRepository GetInvoiceRepository();
 }

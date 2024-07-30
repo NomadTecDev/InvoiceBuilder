@@ -2,7 +2,7 @@
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-public interface IInvoiceMapper
+internal interface IInvoiceMapper
 {
     Invoice MapSource(RawInvoiceRow rawInvoiceRow);
 }

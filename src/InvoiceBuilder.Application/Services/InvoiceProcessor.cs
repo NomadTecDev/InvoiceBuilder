@@ -14,7 +14,7 @@ using InvoiceBuilder.Core.Interfaces;
 
 namespace InvoiceBuilder.Application.Services;
 
-public class InvoiceProcessor(
+internal class InvoiceProcessor(
     ILogger<InvoiceService> logger, 
     IInvoiceMapper invoiceMapper,
     InvoiceSettings invoiceSettings) : IInvoiceProcessor {
