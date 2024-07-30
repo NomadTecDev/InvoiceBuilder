@@ -1,7 +1,4 @@
-﻿using System.ComponentModel;
-using System.Text.Json.Serialization;
-
-namespace InvoiceBuilder.Core.Entities;
+﻿namespace InvoiceBuilder.Core.Entities;
 
 internal class Invoice
 {
