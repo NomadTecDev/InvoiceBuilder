@@ -13,10 +13,10 @@ internal class FileFormatService : IFileFormatService
     /// </summary>
     /// <param name="sourceFile"></param>
     /// <returns>string fileFormat</returns>
-    public FileFormat GetFileFormat(string sourceFile) => MimeTypesMap.GetMimeType(sourceFile) switch
+    public InputFormat GetFileFormat(string sourceFile) => MimeTypesMap.GetMimeType(sourceFile) switch
     {
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" => FileFormat.Excel,
-        "text/csv" => FileFormat.CSV,
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" => InputFormat.Excel,
+        "text/csv" => InputFormat.CSV,
         _ => throw new Exception("File format not supported")
     };
 }

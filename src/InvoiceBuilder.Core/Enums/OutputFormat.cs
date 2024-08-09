@@ -1,6 +1,6 @@
 ﻿namespace InvoiceBuilder.Core.Enums;
-public enum FileFormat
+public enum OutputFormat
 {
-    CSV,
-    Excel
+    PDF,
+    Word
 }
