@@ -23,12 +23,8 @@ public static class ApplicationExtensions
 
         services.AddConfiguration(configuration);
 
-
-
         var serviceProvider = services.BuildServiceProvider();
         var invoiceSettings = serviceProvider.GetRequiredService<InvoiceSettings>();
-
-
         services.AddSingleton(invoiceSettings);
 
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
@@ -36,15 +32,14 @@ public static class ApplicationExtensions
         services.AddSingleton<IInvoiceService, InvoiceService>();
         services.AddSingleton<IFileFormatService, FileFormatService>();
         services.AddSingleton<IInvoiceRepositoryFactory, InvoiceRepositoryFactory>();
-        services.AddSingleton<IInvoiceMapper, InvoiceMapper>();
         services.AddSingleton<IInvoiceProcessor, InvoiceProcessor>();
-        services.AddSingleton<IWordDocumentProcessor, WordDocumentProcessor>();
+        services.AddSingleton<IWordTemplateProcessor, WordTemplateProcessor>();
 
         services.AddSingleton<CsvInvoiceRepository>();
         services.AddSingleton<ExcelInvoiceRepository>();
 
-        services.AddSingleton<PdfFileGenerator>();
-        services.AddSingleton<WordFileGenerator>();
+        services.AddSingleton<PdfDocumentGenerator>();
+        services.AddSingleton<WordDocumentGenerator>();
 
         services.AddSingleton<IInvoiceRepository>(sp =>
         {
@@ -52,12 +47,12 @@ public static class ApplicationExtensions
             return factory.GetInvoiceRepository();
         });
 
-        services.AddSingleton<IFileGenerator>(sp =>
+        services.AddSingleton<IDocumentGenerator>(sp =>
         {
             return invoiceSettings.OutputFormat switch
             {
-                OutputFormat.Word => sp.GetRequiredService<WordFileGenerator>(),
-                _ => sp.GetRequiredService<PdfFileGenerator>(),
+                OutputFormat.Word => sp.GetRequiredService<WordDocumentGenerator>(),
+                _ => sp.GetRequiredService<PdfDocumentGenerator>(),
             };
         });
 

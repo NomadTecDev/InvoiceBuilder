@@ -7,6 +7,8 @@ namespace InvoiceBuilder.Application.Services;
 internal class InvoiceProcessor(
     ILogger<InvoiceService> logger, 
     IConfigurationMapper configurationMapper,
+    IWordTemplateProcessor wordTemplateProcessor,
+    IDocumentGenerator docomentGenerator,
     IDateTimeProvider dateTimeProvider,
     InvoiceSettings invoiceSettings) : IInvoiceProcessor {
 
@@ -22,6 +24,22 @@ internal class InvoiceProcessor(
         {
             logger.LogError(ex, "An error occurred while creating the invoice.");
             throw new Exception("An error occurred while creating the invoice.", ex);
+        }
+    }
+
+    public string Generate(Invoice invoice)
+    {
+        try
+        {
+            var keyValuePairs = configurationMapper.GetKeyValuePairs(invoiceSettings.OutputMapping, invoice);
+            var wordDocumentContents = wordTemplateProcessor.Create(invoiceSettings.TemplateFile, keyValuePairs);
+
+            return docomentGenerator.Create(wordDocumentContents, invoiceSettings.OutputPath, invoice.InvoiceNumber);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "An error occurred while generating the invoice.");
+            throw new Exception("An error occurred while generating the invoice.", ex);
         }
     }
 

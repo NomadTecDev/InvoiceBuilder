@@ -8,11 +8,11 @@ using System.Xml.Linq;
 
 namespace InvoiceBuilder.Application.Services;
 
-internal class PdfFileGenerator() : IFileGenerator
+internal class PdfDocumentGenerator() : IDocumentGenerator
 {
     private static readonly PdfOptions _pdfOptions = new() { Landscape = false, Format = PaperFormat.A4 };
 
-    public string Create(byte[] wordDocumentContents, string documentName)
+    public string Create(byte[] wordDocumentContents, string outputPath, string documentName)
     {
         using var memoryStream = new MemoryStream();
 
@@ -31,7 +31,7 @@ internal class PdfFileGenerator() : IFileGenerator
 
         string htmlString = htmlElement.ToString();
 
-        return ConvertHtmlToPdf(htmlString, $"{documentName}.pdf");
+        return ConvertHtmlToPdf(htmlString, Path.Combine(outputPath, $"{documentName}.pdf") );
     }
 
     static string ConvertHtmlToPdf(string htmlString, string pdfPath)

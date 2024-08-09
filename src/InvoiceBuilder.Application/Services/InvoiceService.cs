@@ -23,4 +23,17 @@ internal class InvoiceService(
             throw new Exception("An error occurred while getting the latest invoice.", ex);
         }
     }
+
+    public string GenerateInvoice(Invoice invoice)
+    {
+        try
+        {
+            return invoiceProcessor.Generate(invoice);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "An error occurred while generating the invoice.");
+            throw new Exception("An error occurred while generating the invoice.", ex);
+        }
+    }
 }

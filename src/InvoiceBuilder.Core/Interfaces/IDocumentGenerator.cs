@@ -2,7 +2,7 @@
 using InvoiceBuilder.Core.Enums;
 
 namespace InvoiceBuilder.Core.Interfaces;
-internal interface IFileGenerator
+internal interface IDocumentGenerator
 {
-    string Create(byte[] wordDocumentContents, string filename);
+    string Create(byte[] wordDocumentContents, string outputPath, string filename);
 }

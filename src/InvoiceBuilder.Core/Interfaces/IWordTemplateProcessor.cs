@@ -3,7 +3,7 @@ using InvoiceBuilder.Core.Enums;
 
 namespace InvoiceBuilder.Core.Interfaces;
 
-internal interface IWordDocumentProcessor
+internal interface IWordTemplateProcessor
 {
     byte[] Create(string documentTemplate, Dictionary<string, string> documentVariables);
 }

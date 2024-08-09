@@ -1,9 +1,6 @@
 ﻿using InvoiceBuilder.Core.Interfaces;
 using Microsoft.Extensions.Configuration;
-using PuppeteerSharp;
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Reflection;
 
@@ -11,18 +8,20 @@ namespace InvoiceBuilder.Application.Services;
 
 internal class ConfigurationMapper : IConfigurationMapper
 {
+    private static Dictionary<string, string> _keyValuePairs = [];
+
     public Dictionary<string, string> GetKeyValuePairs(IConfigurationSection configurationSection, object entity)
     {
-        var keyValuePairs = new Dictionary<string, string>();
+        _keyValuePairs = [];
 
         _ = configurationSection ?? throw new ArgumentNullException(nameof(configurationSection));
 
-        AddSectionToDictionary(configurationSection, entity, keyValuePairs);
+        AddSectionToDictionary(configurationSection, entity);
 
-        return keyValuePairs;
+        return _keyValuePairs;
     }
 
-    private static void AddSectionToDictionary(IConfigurationSection configurationSection, object entity, Dictionary<string, string> keyValuePairs)
+    private static void AddSectionToDictionary(IConfigurationSection configurationSection, object entity)
     {
         foreach (var child in configurationSection.GetChildren())
         {
@@ -38,7 +37,6 @@ internal class ConfigurationMapper : IConfigurationMapper
                 // handle new list of entities
                 if (typeof(IList).IsAssignableFrom(propertyInfo.PropertyType))
                 {
-
                     var list = propertyInfo.GetValue(entity) as IList;
 
                     if(list is null)
@@ -51,14 +49,7 @@ internal class ConfigurationMapper : IConfigurationMapper
                     foreach (var listItem in child.GetChildren())
                     {
                         var entityItem = list[index];
-
-                        var listItemInfo = entity.GetType().GetProperty(listItem.Key);
-
-                        foreach (var listItemProperty in entityItem.GetType().GetProperties())
-                        {
-                            var listItemValue = listItemProperty.GetValue(listItem);
-                            // keyValuePairs.Add(, listItemValue?.ToString() ?? string.Empty);
-                        }
+                        AddSectionToDictionary(listItem, entityItem);
 
                         index++;
                     }
@@ -68,7 +59,7 @@ internal class ConfigurationMapper : IConfigurationMapper
                 var childEntity = propertyInfo.GetValue(entity);
 
                 // recursive loop through child sections
-                AddSectionToDictionary(child, childEntity, keyValuePairs);
+                AddSectionToDictionary(child, childEntity);
             }
             else
             {
@@ -76,10 +67,21 @@ internal class ConfigurationMapper : IConfigurationMapper
                 var propertyInfo = entity.GetType().GetProperty(child.Key);
                 var propertyValue = propertyInfo.GetValue(entity);
 
-                keyValuePairs.Add(child.Value, propertyValue?.ToString() ?? string.Empty);
+                var valueString = propertyValue?.ToString();
+
+                switch (propertyValue)
+                {
+                    case Decimal newValue:
+                        valueString = newValue.ToString("F02");
+                        break;
+                }
+
+                _keyValuePairs.Add(child.Value, valueString ?? string.Empty);
             }
         }
     }
+
+
 
     public T MapToEntity<T>(IConfigurationSection configurationSection, Dictionary<string, string> keyValuePairs)
     {
