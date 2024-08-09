@@ -31,3 +31,45 @@ There are two use cases:
 2.  **GenerateLatestInvoice** (Invoice, outputMapping, outputFormat = pdf)
 
 By these measures, we ensure a seamless and efficient process for generating and managing invoices within the application.
+
+**Building the invoice**
+
+Based on a Word template, the invoice mapping and the invoice object a Word document will be generated. The PDF creator will call the DocumentCreator to parse this file as PDF.
+
+Input for the DocumentGenerator should be only the document template and a flat dictionary with all DocumentVariables that have to be replaced.
+
+ConfigurationMapper is another class. It’s input will be the invoice object and the output mapping configuration. While mapping recursive through the output configuration nodes the values will be taken for the invoice object. A value can be a decimal or otherwise a text. A null value will be parsed as empty string to the output dictionary that is finally used to replace the values in the document generator.
+
+var invoice = lastInvoice;  
+var documentVariables = ConfigurationMapper.GetDocumentVariables(invoice);  
+var filename = DocumentGenerator.CreateInvoice(documentVariables, FileFormat fileFormat = FileFormat.PDF)  
+  
+I think that the ConfigurationMapper should later be use for ConfigurationMapper.GetInvoice(rawInvoiceData);
+
+Currently the configuration mapper that is creating the invoice based on the rawinvoice data is generating json and then parsing it to an object. This is overload. The configuration mapper should just recursively go through the configuration tree and assign the entity properties of invoice directly.
+
+In the full application an entity object is generated based on a node in the configuration ConfigToEntity and also EntityToDocumentDictionary.
+
+I think this needs to be a ConfigParser class. ConfigParser.Get\<Invoice\>(IConfigurationElement configurationElement, Dictionary\<string, string\> data)
+
+TemplateValues tv = ConfigParser.GetDictionary(IConfigurationElement configurationElement, object invoice);
+
+**ConfigurationMapper.GetDocumentVariables(invoice) =\>** ConfigParser.GetDictionary(invoiceSettings.outputMapping, invoice);
+
+Simple approach:
+
+var rawInvoiceData = sourceReader.GetData();  
+var latestInvoice = dataReader.GetLatestInvoice(rawInvoiceData);  
+var filename = InvoiceGenerator.CreateInvoice(latestInvoice, filetype);
+
+UseCases:
+
+Invoice GetLatestInvoice(rawInvoiceData);
+
+return ConfigParser.Get\<Invoice\>(rawInvoiceData);
+
+String CreateInvoice(invoice, filetype);
+
+var documentVariables = ConfigParser.GetDocumentVariables(IConfigurationTree);
+
+return WordProcessor.Create(documentTemplate, documentVariables, filetype)

@@ -24,7 +24,7 @@ internal class CsvInvoiceRepository(ILogger<CsvInvoiceRepository> logger) : IInv
                     rawInvoiceRow.Add(kvp.Key, kvp.Value.ToString());
                 }
             }
-
+            logger.LogInformation("Successfully read the CSV file {SourceFile}.", sourceFile);
             return rawInvoiceRow;
         }
         catch (Exception ex)

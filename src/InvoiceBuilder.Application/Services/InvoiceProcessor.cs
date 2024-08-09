@@ -1,29 +1,22 @@
 ﻿using InvoiceBuilder.Core.Entities;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json.Serialization;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using static InvoiceBuilder.Application.Services.InvoiceService;
-using InvoiceBuilder.Application.Converters;
 using InvoiceBuilder.Core.Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace InvoiceBuilder.Application.Services;
 
 internal class InvoiceProcessor(
-    ILogger<InvoiceService> logger, 
-    IInvoiceMapper invoiceMapper,
+    ILogger<InvoiceProcessor> logger, 
+    IConfigurationMapper configurationMapper,
+    IWordTemplateProcessor wordTemplateProcessor,
+    IDocumentGenerator docomentGenerator,
+    IDateTimeProvider dateTimeProvider,
     InvoiceSettings invoiceSettings) : IInvoiceProcessor {
 
     public Invoice Create(RawInvoiceRow rawInvoiceRow)
     {
         try
         {
-            var invoice = invoiceMapper.MapSource(rawInvoiceRow);
+            var invoice = configurationMapper.MapToEntity<Invoice>(invoiceSettings.SourceMapping, rawInvoiceRow);
             Build(invoice);
             return invoice;
         }
@@ -34,6 +27,22 @@ internal class InvoiceProcessor(
         }
     }
 
+    public string Generate(Invoice invoice)
+    {
+        try
+        {
+            var keyValuePairs = configurationMapper.GetEntityVariables(invoiceSettings.OutputMapping, invoice);
+            var wordDocumentContents = wordTemplateProcessor.Create(invoiceSettings.TemplateFile, keyValuePairs);
+
+            return docomentGenerator.Create(wordDocumentContents, invoiceSettings.OutputPath, invoice.InvoiceNumber);
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "An error occurred while generating the invoice.");
+            throw new Exception("An error occurred while generating the invoice.", ex);
+        }
+    }
+
     private void Build(Invoice invoice)
     {
         if (invoice.InvoiceRows is null || invoice.InvoiceRows.Count == 0)
@@ -41,7 +50,7 @@ internal class InvoiceProcessor(
             return;
         }
 
-        invoice.Subtal = 0;
+        invoice.Subtotal = 0;
         invoice.VatTotal = 0;
 
         foreach (var invoiceRow in invoice.InvoiceRows)
@@ -53,14 +62,23 @@ internal class InvoiceProcessor(
             invoiceRow.VatRate ??= invoiceSettings.DefaultVateRate;
 
             // calculate the subtotal, VAT total, and total
-            invoice.Subtal += Math.Round((decimal)invoiceRow.Cost, 2);
+            invoice.Subtotal += Math.Round((decimal)invoiceRow.Cost, 2);
             invoice.VatTotal += Math.Round((decimal)invoiceRow.Cost * (decimal)invoiceRow.VatRate / 100, 2);
         }
 
-        invoice.Total = invoice.Subtal + invoice.VatTotal;
+        invoice.Total = invoice.Subtotal + invoice.VatTotal;
+
+        // set default vat reate
+        invoice.VatRate ??= invoiceSettings.DefaultVateRate;
+
+        // set expire days with default if not set
+        invoice.ExpireDays ??= invoiceSettings.DefaultExpireDays;
+
+        // set today as invoice date if not set
+        invoice.InvoiceDate ??= dateTimeProvider.Today;
 
         // set the expire date
-        invoice.ExpireDate ??= invoice.InvoiceDate.AddDays(invoiceSettings.DefaultExpireDays);
+        invoice.ExpireDate ??= ((DateOnly)invoice.InvoiceDate).AddDays((int)invoice.ExpireDays);
 
         // set the default currency
         invoice.Currency ??= invoiceSettings.DefaultCurrency;

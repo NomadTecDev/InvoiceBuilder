@@ -1,28 +1,86 @@
 ﻿using InvoiceBuilder.Application.Extensions;
-using InvoiceBuilder.Core.Interfaces;
-using Microsoft.Extensions.Configuration;
+using InvoiceBuilder.Application.UseCases.Interfaces;
+using InvoiceBuilder.ConsoleApp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Syncfusion.Compression.Zip;
 
-
-var host = Host.CreateDefaultBuilder(args)
-    .ConfigureLogging(logging =>
+internal class Program
+{
+    private static void Main(string[] args)
     {
-        logging.ClearProviders();
-        logging.AddConsole();
-        logging.AddDebug();
-    })
-    .ConfigureServices((context, services) =>
+        var host = Host.CreateDefaultBuilder(args)
+            .ConfigureLogging(logging =>
+            {
+                logging.ClearProviders();
+                logging.AddDebug();
+            })
+            .ConfigureServices((context, services) =>
+            {
+                services.AddApplicationConfiguration(context.HostingEnvironment);
+                services.AddSingleton<IConsole, ConsoleWrapper>(); // enables different console for testing
+            })
+            .Build();
+
+        Run(host);
+    }
+    internal static void Run(IHost host)
     {
-        services.AddApplicationConfiguration(context.Configuration);
-    })
-    .Build();
+        var logger = host.Services.GetRequiredService<ILogger<Program>>();
+        var console = host.Services.GetRequiredService<IConsole>();
 
-var logger = host.Services.GetRequiredService<ILogger<Program>>();
+        try
+        {
+            var getLatestInvoiceUseCase = host.Services.GetRequiredService<IGetLatestInvoiceUseCase>();
 
-var invoiceService = host.Services.GetRequiredService<IInvoiceService>();
-var invoice = invoiceService.GetLatestInvoice();
+            var invoice = getLatestInvoiceUseCase.Execute();
+            logger.LogInformation($"Invoice number: {invoice.InvoiceNumber}");
+            console.WriteLine($"Invoice number: {invoice.InvoiceNumber}");
 
-logger.LogInformation($"Factuurnummer {invoice.InvoiceNumber}");
-Console.WriteLine($"Factuurnummer {invoice.InvoiceNumber}");
+            var generateInvoiceUseCase = host.Services.GetRequiredService<IGenerateInvoiceUseCase>();
+            var filename = generateInvoiceUseCase.Execute(invoice);
+            logger.LogInformation($"File generated: {filename}");
+            console.WriteLine($"File generated: {filename}");
+
+            console.WriteLine($"File {filename} genereated, please press Y to view the file now!");
+            var keyInfo = console.ReadKey(intercept: true);
+            switch (char.ToLower(keyInfo.KeyChar))
+            {
+                case 'y':
+                    OpenFile(filename);
+                    break;
+                default:
+                    console.WriteLine("Goodbye!");
+                    break;
+            }
+        }
+        catch (Exception ex)
+        {
+            var rootCause = ex;
+            while (rootCause.InnerException is not null)
+            {
+                rootCause = rootCause.InnerException;
+            }
+
+            logger.LogError(rootCause, "An unexpected error occurred. Please try again later.");
+            console.WriteLine($"An unexpected error occurred. Please try again later. {rootCause.Message}");
+        }
+    }
+
+    private static void OpenFile(string fileName)
+    {
+        try
+        {
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = fileName,
+                UseShellExecute = true
+            });
+        }
+        catch (Exception ex)
+        {
+            throw new FileNotFoundException(fileName, ex);
+        }
+    }
+}

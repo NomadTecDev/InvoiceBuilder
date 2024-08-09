@@ -1,4 +1,2 @@
-InvoiceNumber,InvoiceDate,Client,Contact,Address,Postal,City,Country,Kvk,VATID,IR1,IRP1,IR2,IRP2,IR3,IRP3,IR4,IRP4,IR5,IRP5,IR6,IRP6
-11201,01/07/2024,Test company BV,Afd. Crediteuren,Kerstraat 1,3011 AA,Rotterdam,The Netherlands,123456,NL12345678B08,Werkzaamheden,0,,,Bijzonderheden:,,Er zijn geen werkzaamheden,,,,,
-11202,24/07/2024,Knaken Cryptohandel,Ronald Jonkerrs,Nassaukade 5,3071 JL,Rotterdam,,733194,NL43823462,Intake analize,874,,,,,,,,,,
-11203,24/07/2024,Knaken Cryptohandel,Ronald Jonkerrs,Nassaukade 5,3071 JL,Rotterdam,,733194,NL43823462,Intake analize,1240,,,,,,,,,,
+InvoiceNumber,InvoiceDate,ExpireDays,Client,Contact,Address,Postal,City,Country,Kvk,VATID,IR1,IRP1,IR2,IRP2,IR3,IRP3,IR4,IRP4,IR5,IRP5,IR6,IRP6
+ND1001,,14,NomadTec.dev,,Baggerstraat 3,2599XX,Dinkelveen,,22880000,NL00033333,Ontwikkeling portaal medewerkers,1240,Co-working 1mnd,250.25,Kosten,5.75,,,,,,

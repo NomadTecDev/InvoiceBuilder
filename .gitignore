@@ -149,6 +149,10 @@ coverage/
 .env.test.local
 .env.production.local
 
+# Ignore appsettings.Development.json
+appsettings.Development.json
+appsettings.development.json
+
 # Ignore build output
 dist/
 out/

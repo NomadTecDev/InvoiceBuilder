@@ -22,7 +22,7 @@ internal class InvoiceRepositoryFactory(
     public IInvoiceRepository GetInvoiceRepository() => 
         fileFormatService.GetFileFormat(invoiceSettings.SourceFile) switch
         {
-            FileFormat.Excel => serviceProvider.GetRequiredService<ExcelInvoiceRepository>(),
+            InputFormat.Excel => serviceProvider.GetRequiredService<ExcelInvoiceRepository>(),
             _ => serviceProvider.GetRequiredService<CsvInvoiceRepository>(),
         };
 }

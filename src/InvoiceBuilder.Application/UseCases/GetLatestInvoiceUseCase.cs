@@ -1,16 +1,17 @@
-﻿using InvoiceBuilder.Core.Entities;
+﻿using InvoiceBuilder.Application.UseCases.Interfaces;
+using InvoiceBuilder.Core.Entities;
 using InvoiceBuilder.Core.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace InvoiceBuilder.Application.Services;
+namespace InvoiceBuilder.Application.UseCases;
 
-internal class InvoiceService(
-    ILogger<InvoiceService> logger,
+internal class GetLatestInvoiceUseCase(
+    ILogger<GetLatestInvoiceUseCase> logger,
     IInvoiceRepository invoiceRepository,
     IInvoiceProcessor invoiceProcessor,
-    InvoiceSettings invoiceSettings) : IInvoiceService { 
-
-    public Invoice GetLatestInvoice()
+    InvoiceSettings invoiceSettings) : IGetLatestInvoiceUseCase
+{
+    public Invoice Execute()
     {
         try
         {
