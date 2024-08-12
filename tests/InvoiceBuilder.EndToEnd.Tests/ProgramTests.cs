@@ -57,15 +57,9 @@ public class ProgramTests(ITestOutputHelper testOutputHelper)
         Program.Run(host);
         var consoleOutput = testConsole.GetOutput();
         string invoiceNumber = Regex.Match(consoleOutput, @"Invoice number: (\w+)")?.Groups[1].Value ?? "ERROR on InvoiceNumber";
+        string fileFormat = invoiceSettings.OutputFormat == OutputFormat.Word ? "docx" : "pdf";
 
         // Assert
-        if (invoiceSettings.OutputFormat == OutputFormat.Word)
-        {
-            Assert.Contains($"File {tempDirectory.Path}\\{invoiceNumber}.docx genereated", consoleOutput);
-        }
-        else
-        {
-            Assert.Contains($"File {tempDirectory.Path}\\{invoiceNumber}.pdf genereated", consoleOutput);
-        }
+        Assert.Contains($"File {tempDirectory.Path}\\{invoiceNumber}.{fileFormat} genereated", consoleOutput);
     }
 }
